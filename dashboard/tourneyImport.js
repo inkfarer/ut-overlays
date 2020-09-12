@@ -51,6 +51,8 @@ const query = `query Entrants($slug: String!, $page: Int!, $perPage: Int!) {
 	}
 }`
 
+const maxNameLength = 48;
+
 document.querySelector('#tourneySubmit').onclick = async () => {
 	setStatusLoading();
 	var slug = document.querySelector('#tourneySlugInput').value;
@@ -94,12 +96,16 @@ document.querySelector('#tourneySubmit').onclick = async () => {
 
 			for (let j = 0; j < element.entrant.participants.length; j++) {
 				const teamPlayer = element.entrant.participants[j];
+				let name = teamPlayer.gamerTag;
+				if (teamPlayer.gamerTag.length >= maxNameLength) name += '...';
 				teamPlayers.push({
-					name: teamPlayer.gamerTag
+					name: name
 				});
 			}
+			let teamName = element.name;
+			if (teamName.length >= maxNameLength) teamName = teamName.substring(0, maxNameLength) + '...';
 			tourneyInfo.push({
-				name: element.name,
+				name: teamName,
 				players: teamPlayers,
 			});
 		}
@@ -152,12 +158,16 @@ async function getAdditionalPage(page) {
 
 				for (let j = 0; j < element.entrant.participants.length; j++) {
 					const teamPlayer = element.entrant.participants[j];
+					let name = teamPlayer.gamerTag;
+					if (teamPlayer.gamerTag.length >= maxNameLength) name = name.substring(0, maxNameLength) + '...';
 					teamPlayers.push({
-						name: teamPlayer.gamerTag
+						name: name
 					});
 				}
+				let teamName = element.name;
+				if (teamName.length >= maxNameLength) teamName = name.substring(0, maxNameLength) + '...';
 				pageInfo.push({
-					name: element.name,
+					name: element.name.substring(0, maxNameLength),
 					players: teamPlayers,
 				});
 			}
