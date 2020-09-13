@@ -506,7 +506,8 @@ const topBarTL = gsap.timeline();
 function setTopBarTextLoop() {
 	for (let i = 0; i < 2; i++) {
 		if (i === 0) {
-			setTopBarText(casterNames.value, document.querySelector('#breakTopRightInfo'), 'img/microphone.svg', false);
+			let finalElem = casterNames.value.replaceAll('[[', '<span class="pronoun">').replaceAll(']]', '</span>');
+			setTopBarText(finalElem, document.querySelector('#breakTopRightInfo'), 'img/microphone.svg', false, true);
 		} else if (i === 1) {
 			var songName;
 
@@ -516,13 +517,13 @@ function setTopBarTextLoop() {
 				songName = getSongNameString(nowPlaying.value);
 			}
 
-			setTopBarText(songName, document.querySelector('#breakTopRightInfo'), 'img/music.svg', true);
+			setTopBarText(songName, document.querySelector('#breakTopRightInfo'), 'img/music.svg', true, true);
 		}
 	}
 }
 
-function setTopBarText(text, elem, icon, repeat) {
-	let textWidth = measureText(text, breakMainTextProps.fontFamily, breakMainTextProps.fontSize, 800) + 20;
+function setTopBarText(text, elem, icon, repeat, useInnerHTML = false) {
+	let textWidth = measureText(text, breakMainTextProps.fontFamily, breakMainTextProps.fontSize, 800, useInnerHTML) + 20;
 
 	let textElem = elem.querySelector('fitted-text');
 	let bgElem = elem.querySelector('div.mainInfoBG');
