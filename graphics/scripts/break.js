@@ -153,7 +153,7 @@ mainFlavorText.on('change', newValue => {
 
 const casterNames = nodecg.Replicant('casterNames', { defaultValue: "We don't know." });
 casterNames.on('change', newValue => {
-	let finalElem = newValue.replaceAll('[[', '<span class="pronoun">').replaceAll(']]', '</span>');
+	let finalElem = newValue.replace(/\[\[/g, '<span class="pronoun">').replace(/\]\]/g, '</span>');
 	setMainSceneText(finalElem, document.querySelector('#mainCasters'));
 });
 
@@ -506,7 +506,7 @@ const topBarTL = gsap.timeline();
 function setTopBarTextLoop() {
 	for (let i = 0; i < 2; i++) {
 		if (i === 0) {
-			let finalElem = casterNames.value.replaceAll('[[', '<span class="pronoun">').replaceAll(']]', '</span>');
+			let finalElem = casterNames.value.replace(/\[\[/g, '<span class="pronoun">').replace(/\]\]/g, '</span>');
 			setTopBarText(finalElem, document.querySelector('#breakTopRightInfo'), 'img/microphone.svg', false, true);
 		} else if (i === 1) {
 			var songName;
