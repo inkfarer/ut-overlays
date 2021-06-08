@@ -3,8 +3,18 @@
 const topBarTL = gsap.timeline();
 
 function setTopBarTextLoop() {
-	for (let i = 0; i < 2; i++) {
+	for (let i = 0; i < 3; i++) {
 		if (i === 0) {
+			let finalElem = ''
+			// Form new casters line from objects
+			Object.keys(casters.value).forEach((item, index, arr) => {
+				const element = casters.value[item];  // Get caster from object
+				if (index > 0 && index < (arr.length-1)){ finalElem += ` , ` }
+				else if(index > 0){ finalElem += ` & ` }
+				finalElem += `${element.name}<span class="pronoun">${element.pronouns}</span>`
+			});
+			setTopBarText(finalElem, document.querySelector('#breakTopRightInfo'), 'img/microphone.svg', false, true);
+		}else if (i === 1) {
 			let finalElem = ''
 			// Form new casters line from objects
 			Object.keys(casters.value).forEach((item, index, arr) => {
@@ -14,7 +24,7 @@ function setTopBarTextLoop() {
 				finalElem += `${element.twitter}<span class="pronoun">${element.pronouns}</span>`
 			});
 			setTopBarText(finalElem, document.querySelector('#breakTopRightInfo'), 'img/microphone.svg', false, true);
-		} else if (i === 1) {
+		} else if (i === 2) {
 			var songName;
 
 			if (nowPlayingSource.value === "manual"){
