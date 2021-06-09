@@ -1,4 +1,4 @@
-// INSANE background animation
+// Minor: background Animation
 // generate background elements
 
 for (let i = 1; i <= 6; i++) {

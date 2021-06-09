@@ -1,5 +1,7 @@
-// hiding stuff
-
+/**
+ * Hide on-screen element
+ * @param elem element to hide
+ */
 function hideMainElem(elem) {
 	let elemWidth = elem.getBoundingClientRect().width + 80;
 	elem = elem.parentNode;
@@ -8,6 +10,10 @@ function hideMainElem(elem) {
 	gsap.to(elem, {maxWidth: 0, duration: 0.75, ease: 'power2.inOut', delay: 0.6});
 }
 
+/**
+ * Shows on-screen element
+ * @param elem element to show
+ */
 function showMainElem(elem) {
 	// SCARY overcomplicated code that took me HOURS
 	// ensures that the animation is always smooth no matter how the element moves
