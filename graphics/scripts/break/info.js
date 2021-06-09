@@ -57,5 +57,5 @@ casters.on('change', newValue => {
 		finalElem += `${element.name}<span class="pronoun">${element.pronouns}</span>`
 	});
 
-	setMainSceneText(finalElem, document.querySelector('#mainCasters'));
+	setMainSceneText(finalElem, document.querySelector('#mainCasters'), true);
 });
