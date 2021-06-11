@@ -25,9 +25,10 @@ const breakMainTextProps = {
 }
 
 function setMainSceneText(text, elem, useInnerHTML = false) {
-	let textWidth = measureText(text, breakMainTextProps.fontFamily, breakMainTextProps.fontSize, breakMainTextProps.maxWidth, useInnerHTML) + 20;
-
 	let textElem = elem.querySelector('fitted-text');
+	const maxWidth = parseInt(textElem.getAttribute('max-width'));
+
+	let textWidth = measureText(text, breakMainTextProps.fontFamily, breakMainTextProps.fontSize, maxWidth, useInnerHTML) + 20;
 	let bgElem = elem.querySelector('div.mainInfoBG');
 
 	if (textElem.getAttribute('text') === text) return;
@@ -43,7 +44,7 @@ function setMainSceneText(text, elem, useInnerHTML = false) {
 
 mainFlavorText.on('change', newValue => {
 	setMainSceneText(newValue, document.querySelector('#mainFlavorText'));
-	setTopBarText(newValue, document.querySelector('#breakTopLeftInfo'));
+	setMainSceneText(newValue, document.querySelector('#breakTopLeftInfo'));
 });
 
 casters.on('change', newValue => {

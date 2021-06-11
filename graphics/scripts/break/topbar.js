@@ -47,7 +47,9 @@ function setTopBarText(text, elem, icon, repeat, useInnerHTML = false) {
 
 	topBarTL.add(gsap.to([textElem, iconElem], {duration: 0.5, opacity: 0, onComplete: function() {
 			textElem.setAttribute('text', text);
-			iconElem.src = icon;
+			if (iconElem) {
+				iconElem.src = icon;
+			}
 		}}, 'hide'))
 		.add(gsap.to([bgElem, elem], {duration: 0.5, width: textWidth, ease: 'power2.inOut'}))
 		.add(gsap.to([textElem, iconElem], {duration: 0.5, opacity: 1}, 'show'))

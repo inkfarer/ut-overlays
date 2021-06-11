@@ -181,7 +181,7 @@ p {
 .ipl-powered-logo {
 	position: absolute;
 	bottom: 85px;
-	width: 500px;
+	width: 400px;
 }
 
 .measurer {
@@ -385,4 +385,5 @@ span.pronoun {
 	background-color: #222;
 	padding: 0 5px;
 	color: white;
+	margin-left: 5px;
 }
