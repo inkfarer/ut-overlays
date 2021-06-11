@@ -44,16 +44,14 @@ function textOpacitySwap(newText, elem) {
 }
 
 scoreboardShown.on('change', newValue => {
-	var sbTop, flavorBottom, ease;
+	var sbTop, ease;
 	if (newValue) {
 		sbTop = 40;
-		flavorBottom = 10;
 		ease = 'power2.out';
 	} else {
-		sbTop = -135;
-		flavorBottom = -50;
+		sbTop = -170;
 		ease = 'power2.in';
 	}
-	gsap.to('.flavorTextWrapper', {bottom: flavorBottom, ease: ease});
-	gsap.to('.scWrapper', {top: sbTop, ease: ease});
+
+	gsap.to('.scoreboard-wrapper', {top: sbTop, ease: ease});
 });

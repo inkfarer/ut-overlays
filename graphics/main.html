@@ -11,28 +11,38 @@
 	<link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-	<div class="scWrapper">
-		<div class="scBorder"></div>
-		<div class="scBackground"></div>
-		<div class="scoreboard">
-			<div class="teamsGrid">
-				<fitted-text text="" max-width="275" id="team-a-name"></fitted-text>
-				<fitted-text text="" max-width="275" id="team-b-name"></fitted-text>
+	<div class="scoreboard-wrapper">
+		<div class="scWrapper">
+			<div class="scBorder"></div>
+			<div class="scBackground"></div>
+			<div class="scoreboard">
+				<div class="teamsGrid">
+					<fitted-text text="" max-width="275" id="team-a-name"></fitted-text>
+					<fitted-text text="" max-width="275" id="team-b-name"></fitted-text>
+				</div>
+				<div class="teamColorIndics">
+					<div class="teamColorDisplay" id="team-a-color"></div>
+					<div class="teamColorDisplay" id="team-b-color"></div>
+				</div>
+				<div class="scoresGrid">
+					<fitted-text text="0" align="center" id="team-a-score" max-width="40"></fitted-text>
+					<fitted-text text="0" align="center" id="team-b-score" max-width="40"></fitted-text>
+				</div>
 			</div>
-			<div class="teamColorIndics">
-				<div class="teamColorDisplay" id="team-a-color"></div>
-				<div class="teamColorDisplay" id="team-b-color"></div>
-			</div>
-			<div class="scoresGrid">
-				<fitted-text text="0" align="center" id="team-a-score" max-width="40"></fitted-text>
-				<fitted-text text="0" align="center" id="team-b-score" max-width="40"></fitted-text>
-			</div>
+		</div>
+
+		<div class="flavorTextContainer">
+			<fitted-text align="center" max-width="320" id="scoreboard-flavor-text" text="UT!"></fitted-text>
 		</div>
 	</div>
 
-	<div class="flavorTextWrapper">
-		<div class="flavorTextContainer">
-			<fitted-text align="center" max-width="500" id="scoreboard-flavor-text" text="UT!"></fitted-text>
+	<div class="casters-wrapper flex-align-center">
+		<div class="background flex-align-center">
+			<div class="casters-content flex-align-center">
+				<div class="casters">
+				</div>
+				<div class="label">Commentators</div>
+			</div>
 		</div>
 	</div>
 
@@ -41,5 +51,6 @@
 
 	<script src="scripts/replicants.js"></script>
 	<script src="scripts/main/scoreboard.js"></script>
+	<script src="scripts/main/casters.js"></script>
 </body>
 </html>
