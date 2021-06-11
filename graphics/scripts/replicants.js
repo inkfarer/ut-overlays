@@ -1,0 +1,16 @@
+const activeBreakScene = nodecg.Replicant('activeBreakScene', 'ipl-overlay-controls');
+const casters = nodecg.Replicant('casters', 'ipl-overlay-controls');
+const mainFlavorText = nodecg.Replicant('mainFlavorText', 'ipl-overlay-controls');
+const nowPlaying = nodecg.Replicant('nowPlaying', 'ipl-overlay-controls');
+const manualNowPlaying = nodecg.Replicant('manualNowPlaying', 'ipl-overlay-controls');
+const nowPlayingSource = nodecg.Replicant('nowPlayingSource', 'ipl-overlay-controls');
+const musicShown = nodecg.Replicant('musicShown', 'ipl-overlay-controls');
+const nextRoundTime = nodecg.Replicant('nextRoundStartTime', 'ipl-overlay-controls');
+const nextRoundStartTimeShown = nodecg.Replicant('nextRoundStartTimeShown', 'ipl-overlay-controls');
+const rounds = nodecg.Replicant('rounds', 'ipl-overlay-controls');
+const activeRound = nodecg.Replicant('activeRoundId', 'ipl-overlay-controls');
+const gameWinners = nodecg.Replicant('gameWinners', 'ipl-overlay-controls');
+const scoreboardData = nodecg.Replicant('scoreboardData', 'ipl-overlay-controls');
+const teamScores = nodecg.Replicant('teamScores', 'ipl-overlay-controls');
+const nextTeams = nodecg.Replicant('nextTeams', 'ipl-overlay-controls');
+const scoreboardShown = nodecg.Replicant('scoreboardShown', 'ipl-overlay-controls');

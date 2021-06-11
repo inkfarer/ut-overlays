@@ -1,6 +1,8 @@
-# unnamed-tourney-overlays
+# ut-overlays
 
-A [NodeCG](http://github.com/nodecg/nodecg) bundle.
+A [NodeCG](http://github.com/nodecg/nodecg) bundle for Unnamed Tournament, an 
+[Inkling Performance Labs](https://iplabs.ink/) tournament.
+
 
 ## Screenshots
 
@@ -13,40 +15,26 @@ A [NodeCG](http://github.com/nodecg/nodecg) bundle.
 
 ## Install
 
-1.1. Install NodeCG and [nodecg-cli](https://github.com/nodecg/nodecg-cli) (optional)
+1. Follow the instruction [here in ipl-overlay-controls](https://github.com/inkfarer/ipl-overlay-controls) to do
+  the initial setup of NodeCG and Overlay Control Panel.
+   
+2. Install the overlays: `nodecg install inkfarer/ut-overlays`
 
-If you're using nodecg-cli:
+3. Start nodecg using the `nodecg start` command in the folder you installed NodeCG in.
 
-2.1. Run `nodecg install inkfarer/unnamed-tourney-overlays`.
+4. Access the dashboard from `http://localhost:9090/` in your browser.
 
-Otherwise:
-
-2.1. Clone unnamed-tourney-overlays to `nodecg/bundles/unnamed-tourney-overlays`.
-
-2.2. Install dependencies by running `npm install` in `nodecg/bundles/unnamed-tourney-overlays`.
-
-3.1. For last.fm and smash.gg integration to work, create the configuration file at `nodecg/cfg/unnamed-tourney-overlays.json`.
-
-Example configuration file:
-```
-{
-	"lastfm": {
-		"targetAccount": "Your last.fm account name",
-		"apiKey": "your API key",
-		"secret": "your secret"
-	},
-	"smashgg": {
-		"apiKey": "Your Smash.gg API key"
-	}
-}
-```
-
+5. Access the graphics from the "Graphics" tab in the dashboard. Add the overlays to your streaming application of 
+   choice using a **browser** source.
 ## Usage
 
 Start NodeCG. By default, the dashboard can be accessed from `localhost:9090` in your browser.
 
-From the dashboard, URLs to the graphics can be found from the graphics tab. To use them, they should be added as browser sources in a broadcast application such as OBS Studio. The graphics are made to run at a resolution of 1920x1080.
+From the dashboard, URLs to the graphics can be found from the graphics tab. To use them, they should be added as
+browser sources in a broadcast application such as OBS Studio. The graphics should be used at a resolution of
+1920x1080.
 
 ## Credits
 
-Splatoon 2 map portraits are property of Nintendo and were downloaded from the [Splatoon wiki.](https://splatoonwiki.org/)
+Splatoon 2 map portraits are property of Nintendo and were downloaded from
+the [Splatoon wiki.](https://splatoonwiki.org/)
