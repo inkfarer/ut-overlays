@@ -19,7 +19,7 @@ function measureText(text, fontFamily, fontSize, maxWidth, useInnerHTML = false)
 }
 
 const breakMainTextProps = {
-	fontFamily: 'Roboto Condensed',
+	fontFamily: '"Roboto Condensed", "Kosugi Maru"',
 	fontSize: '45px',
 	maxWidth: 650
 }
@@ -35,15 +35,15 @@ function setMainSceneText(text, elem, useInnerHTML = false) {
 	let textTL = gsap.timeline();
 
 	textTL.to(textElem, {duration: 0.5, opacity: 0, onComplete: function() {
-			textElem.setAttribute('text', text);
-		}});
+		textElem.setAttribute('text', text);
+	}});
 	textTL.to([bgElem, elem], {duration: 0.5, width: textWidth, ease: 'power2.inOut'});
 	textTL.to(textElem, {duration: 0.5, opacity: 1});
 }
 
 mainFlavorText.on('change', newValue => {
 	setMainSceneText(newValue, document.querySelector('#mainFlavorText'));
-	setMainSceneText(newValue, document.querySelector('#breakTopLeftInfo'));
+	setTopBarText(newValue, document.querySelector('#breakTopLeftInfo'));
 });
 
 casters.on('change', newValue => {
