@@ -1,6 +1,7 @@
 {
   "name": "ut-overlays",
   "version": "0.0.0",
+  "compatibleDashboardVersion": "^2.0.0",
   "description": "Overlays for a fun one-off Splatoon tournament",
   "homepage": "",
   "author": {
